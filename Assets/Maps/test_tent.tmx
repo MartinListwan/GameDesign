@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-up" width="7" height="7" tilewidth="16" tileheight="16" nextobjectid="4">
+ <properties>
+  <property name="unity:scale" value=".0625"/>
+ </properties>
+ <tileset firstgid="1" source="baseTileset.tsx"/>
+ <layer name="Tile Layer 1" width="7" height="7">
+  <data encoding="csv">
+701,699,699,699,699,699,702,
+757,1490,1490,1490,1490,1490,757,
+757,1490,1490,1490,1490,1490,757,
+757,1490,1490,1490,1490,1490,757,
+757,1490,1490,1490,1490,1490,757,
+757,1490,1490,1490,1490,1490,757,
+757,1490,1490,1490,1490,1490,757
+</data>
+ </layer>
+ <layer name="Objects Layer 2" width="7" height="7">
+  <data encoding="csv">
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,141,0,
+0,0,141,0,0,1026,0,
+0,0,0,0,0,683,0,
+0,0,0,0,0,0,0,
+0,27,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup name="Collision Layer">
+  <object id="1" x="1.33333" y="16" width="14" height="96"/>
+  <object id="2" x="0" y="-0.666667" width="111.333" height="15.3333"/>
+  <object id="3" x="96.6667" y="16" width="14" height="95.3333"/>
+ </objectgroup>
+</map>

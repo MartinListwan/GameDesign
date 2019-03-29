@@ -1,0 +1,213 @@
+BARBARIA - A simple action RPG, with brutal combat
+
+Made with the help of Unity RPG Tutorial #1 - Setting Up The Basics and later ones in the series, by gamesplusjames on youtube.
+#####################
+Controls
+WSAD or arrowkeys = move character
+G - attack
+
+#####################
+Issues
+-Player death and reloading is handled in SlimeController. Mega awful, refactor this
+-Floating numbers Text is too big
+-Floating numbers show up even if invincibility frames are on [but no damage dealt luckily]
+
+#####################
+TODO
+-to go from real time action rpg to more tactical action rpg, you can add tiles to act as pathfinding waypoints, and add pause [with spacebar or something], which will be a bit like Rimworld. This way you'll have the best of both worlds
+
+-Add 3rd area [to the west], where Slimes live
+
+-When you come close to a quest giver, he gives you the quest first [without pressing Space or anything] and only then will he start his dialogue. Should be the other way around
+
+-SFX and Music managers should be singletons
+
+#####################
+Changelog: [The first 40 are simply lessons from the youtube channel. After that I will start adding my own stuff]
+-----
+r40
+Added
+-Money system
+
+r39
+Added:
+-Volume controls
+
+r38
+Added
+-Music
+
+r37
+Added:
+-Sound effects [sword swoosh, player dead, hurt etc]
+
+r36
+Changed:
+-Camera respects level bounds and is clamped to the map [doesn't show the blue Unity background anymore]
+
+r35
+Changed:
+-Player movement [now uses a normalized Vector internally which simplifies everything + fixes inconsisted diagonal movement speed]
+Fixed:
+-Some small bugs [improper weapon placement at start, buggy dialogue if clicking Space too fast]
+-Animator had some duplicate entries? Deleted those
+
+r34
+Added
+-Hunt enemy quest 
+
+r33
+Added
+-Item quest
+
+r32
+Added
+-basic goto quest + triggers for future quests
+
+r31
+Added:
+-quest framework
+
+r30:
+Changed
+-cannot move while talking anymore.
+
+r29:
+Added:
+-multiple dialog lines
+
+r28:
+Added:
+-dialog boxes
+
+r27
+Added:
+-Optional constraints for NPC movement
+
+r26
+Added:
+-NPC and their movement [cardinal directions]
+
+r25:
+Added:
+-Player stats [health, attack and defence] and plugged them into the combat system, so they have an actual effect in-game
+
+r24:
+Added:
+-Player damaged effect + invincibility frames
+
+r23:
+Changed:
+-better attacks [added swing effect]
+Fixed:
+-sword sprite getting under player sometimes
+
+r22:
+Added:
+-experience points and leveling up
+-basic ui to show player lvl
+
+r21
+Changed
+-diagonal movement [I slowed it a bit down, so it matches cardinal movement] and animations [the swords doesn't go diagonal anymore]
+
+r20:
+FIXED:
+-area loading [respects different exit/entryways]
+
+r19:
+Added:
+-basic UI [show player health]
+
+r18
+Added:
+-floating numbers when damage is dealt [to enemies]
+
+r17
+Added:
+- enemy health system
+-blood burst effect when enemy hit
+
+r16
+Added
+-basic attack animations
+Fixed
+-player facing and moving down anims, so the sword is properly placed
+
+r15
+Added
+-basic Player Health system
+
+r14:
+Added:
+-basic weapon animations [for moving/standing]
+
+r13:
+Added:
+-Basic weapons, which destroy enemies when they touch it, for now.
+
+r12:
+Added:
+-enemies actually can kill you now
+Changed
+-enemies now at independent intervals from each other
+
+r11:
+Added:
+-First enemy (Red Slime) with random movement
+
+r10:
+Added:
+-starting points [with changeable player facing direction at start]
+Fixed:
+-multiple instances of players when loading new scene [particuarly when returning to main scene]
+
+r9:
+Added:
+-Loading new areas + exit points to faciliate that
+-New mini-test map [tent_inside]
+
+r8:
+Added:
+-Collision detection works now
+
+Changed
+-Movement is now based on rigidbodies' velocities.
+
+r7:
+Changed
+-Tweaked Tiled, so it will import maps already properly scaled and with proper sortingLayers
+
+r6:
+Added:
+-Basic tile map with some grass, dirt [using the program Tiled]
+-Basic objects with colliders [but no collision detection set up yet]
+
+FIXED:
+-vertical lines between the imported map tiles [changed game view from free aspect to 16:9]
+
+r5:
+Added:
+-Basic camera controls [following player, with Lerp]
+Fixed:
+-jitter lines on ground are no longer! [Sprite material with pixel snap + disabled AA]
+
+r4:
+Added:
+-Remade animations using Blend Trees. Now idle animation respect facing.
+
+r3:
+Added:
+-Basic animations for Player [move left,right,up,down,idle]
+
+r2:
+Added:
+-PlayerController class, with simple movement controls
+
+r1:
+Added:
+-basic art spritesheet
+-Ground object + some tiles
+-Player char [just sprite for now]
+
+ 

@@ -1,0 +1,40 @@
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon HD 7700 Series (ID=0x665c)
+    Vendor:   ATI
+    VRAM:     1004 MB
+    Driver:   21.19.413.0
+Begin MonoManager ReloadAssembly
+Platform assembly: G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.022 seconds
+Platform assembly: G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: G:\Programming\Gry\BarbariaTut\Release\BarbariaR32_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.135030 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1450 -> priority: 1 
+  Thread -> id: 1410 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.856042 ms
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 427.
+Total: 0.412076 ms (FindLiveObjects: 0.050720 ms CreateObjectMapping: 0.061884 ms MarkObjects: 0.256273 ms  DeleteObjects: 0.041741 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.207736 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 902.
+Total: 0.485609 ms (FindLiveObjects: 0.089307 ms CreateObjectMapping: 0.066980 ms MarkObjects: 0.315003 ms  DeleteObjects: 0.012862 ms)
+
