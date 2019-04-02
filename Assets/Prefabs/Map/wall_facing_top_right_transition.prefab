@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1128323203532375707}
   m_Layer: 0
   m_Name: wall_facing_top_right_transition
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

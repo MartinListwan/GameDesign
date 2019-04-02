@@ -10,7 +10,11 @@ TagManager:
   - enemy
   - breakable
   - Ocean
+<<<<<<< HEAD
   - TileAutomata
+=======
+  - Wall
+>>>>>>> 374ef10b68a65dad1e3c30732dd0b2e9c138a3c9
   layers:
   - Default
   - TransparentFX
