@@ -53,16 +53,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Prefabs\Map\V2\Scripts\AnimatedTile.cs" />
+     <Compile Include="Assets\Prefabs\Map\V2\Scripts\CameraMover.cs" />
+     <Compile Include="Assets\Prefabs\Map\V2\Scripts\CaveTile.cs" />
+     <Compile Include="Assets\Prefabs\Map\V2\Scripts\LavaTile.cs" />
+     <Compile Include="Assets\Prefabs\Map\V2\Scripts\TerrainTile.cs" />
+     <Compile Include="Assets\Prefabs\Map\V2\Scripts\TileAutomata.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
      <Compile Include="Assets\Scripts\DialogHolder.cs" />
      <Compile Include="Assets\Scripts\DialogManager.cs" />
+     <Compile Include="Assets\Scripts\Enemy1Controller.cs" />
      <Compile Include="Assets\Scripts\EnemyHPManager.cs" />
      <Compile Include="Assets\Scripts\FloatingNumbers.cs" />
      <Compile Include="Assets\Scripts\GoldPickup.cs" />
      <Compile Include="Assets\Scripts\HurtEnemy.cs" />
      <Compile Include="Assets\Scripts\HurtPlayer.cs" />
      <Compile Include="Assets\Scripts\LoadNewArea.cs" />
+     <Compile Include="Assets\Scripts\MapGeneration\BoardCreator.cs" />
+     <Compile Include="Assets\Scripts\MapGeneration\Corridor.cs" />
+     <Compile Include="Assets\Scripts\MapGeneration\IntRange.cs" />
+     <Compile Include="Assets\Scripts\MapGeneration\RoomGen.cs" />
      <Compile Include="Assets\Scripts\MoneyManager.cs" />
      <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\MusicSwitcher.cs" />

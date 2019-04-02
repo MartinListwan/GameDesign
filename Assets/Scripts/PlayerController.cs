@@ -50,9 +50,21 @@ public class PlayerController : MonoBehaviour {
         lastMove = new Vector2(0,-1);
        
 	}
-	
-	// Update is called once per frame
-	void Update () {
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.layer == LayerMask.NameToLayer("Water")) //If the player enters a boundary add one to the boundariesTouching variable.
+        {
+            print("Player is in " + " boundaries");
+        }
+        else
+        {
+            Debug.Log(collider.gameObject.layer +" :" + LayerMask.NameToLayer("Water"));
+        }
+    }
+
+
+    // Update is called once per frame
+    void Update () {
 
         playerMoving = false;
 
@@ -96,12 +108,19 @@ public class PlayerController : MonoBehaviour {
 
             if(moveInput != Vector2.zero)
             {
-                rigid2D.velocity = new Vector2(
-                    moveInput.x*moveSpeed,
-                    moveInput.y*moveSpeed);
+                if (GetComponent<Collider2D>().gameObject.layer == LayerMask.NameToLayer("Water"))
+                {
+                    rigid2D.velocity = new Vector2(0, 0);
+                } else
+                {
+                    //Debug.Log(GetComponent<Collider2D>().gameObject.layer);
+                    rigid2D.velocity = new Vector2(
+                    moveInput.x * moveSpeed,
+                    moveInput.y * moveSpeed);
 
-                playerMoving = true;
-                lastMove = moveInput;
+                    playerMoving = true;
+                    lastMove = moveInput;
+                }
             }
             else
             {

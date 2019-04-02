@@ -24,7 +24,7 @@ public class HurtPlayer : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.name == "Player")
+        if(other.gameObject.name == "Player" || other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             currentDamageDealt = damageDealt - pStats.currentDefence;
             if (currentDamageDealt < 0) currentDamageDealt = 0;
