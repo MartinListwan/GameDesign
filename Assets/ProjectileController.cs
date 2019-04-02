@@ -28,7 +28,7 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy"||collision.gameObject.tag == "enemy")
         {
             currentDamageDealt = DamageDealt + pStats.currentAttack;
             collision.gameObject.GetComponent<EnemyHPManager>().HurtEnemy(currentDamageDealt);
@@ -36,6 +36,10 @@ public class ProjectileController : MonoBehaviour
             Destroy(gameObject);
         }
             
+        if(collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
