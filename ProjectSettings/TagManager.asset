@@ -10,6 +10,7 @@ TagManager:
   - enemy
   - breakable
   - Ocean
+  - TileAutomata
   layers:
   - Default
   - TransparentFX

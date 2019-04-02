@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEditor;
+using UnityEngine.UI;
 
 public class TileAutomata : MonoBehaviour {
 
@@ -65,11 +66,29 @@ public class TileAutomata : MonoBehaviour {
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    private float timeLeft;
+    private int currentWaveNumber = 1;
+    public Text waveNumber;
+    public Text timeUntilNextWave;
+    private Timer timer;
 
     void Start()
     {
+        timeLeft = startWait;
+        timer = Timer.Register(1f, () => updateWaveText(), isLooped: true);
         doSim(numR);
         StartCoroutine(SpawnWaves());
+    }
+
+    public void updateWaveText()
+    {
+        timeLeft -= 1;
+        timeUntilNextWave.text = string.Format("Time left until next wave: {0} seconds", timeLeft);
+        if (timeLeft == 0)
+        {
+            timeUntilNextWave.text = "Starting!!";
+            timer.Pause();
+        }
     }
 
     IEnumerator SpawnWaves()
@@ -86,6 +105,10 @@ public class TileAutomata : MonoBehaviour {
                 Instantiate(enemies[index], spawnPosition, spawnRotation);
                 yield return new WaitForSeconds(spawnWait);
             }
+            currentWaveNumber++;
+            waveNumber.text = string.Format("Wave {0}", currentWaveNumber);
+            timeLeft = waveWait;
+            timer.Resume();
             yield return new WaitForSeconds(waveWait);
         }
     }
