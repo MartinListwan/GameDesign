@@ -31,6 +31,10 @@ public class UIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (playerHPM == null)
+        {
+            playerHPM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHPManager>();
+        }
         healthBar.maxValue = playerHPM.playerMaxHP;
         healthBar.value = playerHPM.playerCurrentHP;
         healthText.text = string.Format("HP: {0}/{1}",playerHPM.playerCurrentHP,playerHPM.playerMaxHP);

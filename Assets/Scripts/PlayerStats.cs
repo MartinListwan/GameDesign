@@ -48,6 +48,10 @@ public class PlayerStats : MonoBehaviour {
         currentAttack = attackLevels[currentLevel];
         currentDefence = defenceLevels[currentLevel];
 
+            if (playerHP == null)
+            {
+                playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHPManager>();
+            }
         playerHP.playerMaxHP = currentHP;
         playerHP.playerCurrentHP += currentHP - HPLevels[currentLevel-1];  //This will heal up player by the difference between old and new health lvl, on level up
     }
