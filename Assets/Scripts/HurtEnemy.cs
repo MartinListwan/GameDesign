@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HurtEnemy : MonoBehaviour {
 
-    public int DamageDealt;
+    public int DamageDealt, speed = 20;
     private int currentDamageDealt;
     public GameObject damageBurstEffect;
     public Transform strikePoint;
@@ -15,6 +15,7 @@ public class HurtEnemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         pStats = FindObjectOfType<PlayerStats>();
+        
 	}
 	
 	// Update is called once per frame
