@@ -29,6 +29,8 @@ public class EnemyHPManager : MonoBehaviour {
             QM.EnemyKilled = this.EnemyQuestName;
             Destroy(gameObject);
             _playerStats.AddExperience(ExpValue);
+            _playerStats.healthShards += 1;
+          
           
         }
 

@@ -2,25 +2,18 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-<<<<<<< HEAD
-    <RootNamespace>
-    </RootNamespace>
-    <ProjectGuid>{B49C3D1C-E16B-E8BD-9BDF-C4348BCAC872}</ProjectGuid>
-=======
     <RootNamespace></RootNamespace>
     <ProjectGuid>{A66FF95E-0A6E-747C-C0BA-EEE4DD3E6067}</ProjectGuid>
->>>>>>> 374ef10b68a65dad1e3c30732dd0b2e9c138a3c9
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -67,17 +60,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GetHealthShards.cs" />
+    <Compile Include="Assets\HealthPackController.cs" />
+    <Compile Include="Assets\MakeHealthPack.cs" />
     <Compile Include="Assets\Prefabs\Map\V2\Scripts\AnimatedTile.cs" />
     <Compile Include="Assets\Prefabs\Map\V2\Scripts\CameraMover.cs" />
     <Compile Include="Assets\Prefabs\Map\V2\Scripts\CaveTile.cs" />
     <Compile Include="Assets\Prefabs\Map\V2\Scripts\LavaTile.cs" />
     <Compile Include="Assets\Prefabs\Map\V2\Scripts\TerrainTile.cs" />
     <Compile Include="Assets\Prefabs\Map\V2\Scripts\TileAutomata.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Assets\Projectile.cs" />
     <Compile Include="Assets\ProjectileController.cs" />
->>>>>>> 374ef10b68a65dad1e3c30732dd0b2e9c138a3c9
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
     <Compile Include="Assets\Scripts\DialogHolder.cs" />
@@ -110,10 +103,7 @@
     <Compile Include="Assets\Scripts\VillagerMovement.cs" />
     <Compile Include="Assets\Scripts\VolumeControl.cs" />
     <Compile Include="Assets\Scripts\VolumeController.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Assets\Shooting.cs" />
->>>>>>> 374ef10b68a65dad1e3c30732dd0b2e9c138a3c9
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\ImportBehaviour.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SpriteDepthInMap.cs" />
@@ -121,13 +111,11 @@
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledInitialShaderProperties.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
     <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileObject.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Timer\Example\TestTimerBehaviour.cs" />
     <Compile Include="Assets\Timer\Source\Timer.cs" />
     <Compile Include="Assets\Timer\Source\TimerExtensions.cs" />
+    <Compile Include="Assets\UseHealthPack.cs" />
     <None Include="Assets\Art\Open_Sans\LICENSE.txt" />
-=======
->>>>>>> 374ef10b68a65dad1e3c30732dd0b2e9c138a3c9
     <None Include="Assets\Tiled2Unity\Shaders\shaDefault.shader" />
     <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
@@ -135,10 +123,7 @@
     <None Include="Assets\Tiled2Unity\Imported\test_area.tiled2unity.xml" />
     <None Include="Assets\Tiled2Unity\Shaders\shaDepth.shader" />
     <None Include="Assets\Tiled2Unity\Shaders\shaDiffuseDepth.shader" />
-<<<<<<< HEAD
     <None Include="Assets\Art\Roboto\LICENSE.txt" />
-=======
->>>>>>> 374ef10b68a65dad1e3c30732dd0b2e9c138a3c9
     <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Textures\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Imported\test_tent.tiled2unity.xml" />
@@ -148,35 +133,19 @@
     <None Include="Assets\Tiled2Unity\Imported\_ReadMe.txt" />
     <None Include="Assets\Tiled2Unity\Meshes\_ReadMe.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
-<<<<<<< HEAD
-      <HintPath>C:/Users/Marti/Documents/4th year/Game/BarbariaTut-master/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/@David/GameDesign/GameDesign/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Marti/Documents/4th year/Game/BarbariaTut-master/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/@David/GameDesign/GameDesign/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Marti/Documents/4th year/Game/BarbariaTut-master/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/@David/GameDesign/GameDesign/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Marti/Documents/4th year/Game/BarbariaTut-master/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/@David/GameDesign/GameDesign/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/Marti/Documents/4th year/Game/BarbariaTut-master/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-=======
-      <HintPath>D:/@David/GameDesign/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/@David/GameDesign/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/@David/GameDesign/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/@David/GameDesign/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/@David/GameDesign/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
->>>>>>> 374ef10b68a65dad1e3c30732dd0b2e9c138a3c9
+      <HintPath>D:/@David/GameDesign/GameDesign/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -380,23 +349,13 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-<<<<<<< HEAD
-      <HintPath>C:/Users/Marti/Documents/4th year/Game/BarbariaTut-master/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/@David/GameDesign/GameDesign/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/Marti/Documents/4th year/Game/BarbariaTut-master/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/@David/GameDesign/GameDesign/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/Marti/Documents/4th year/Game/BarbariaTut-master/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-=======
-      <HintPath>D:/@David/GameDesign/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/@David/GameDesign/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/@David/GameDesign/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
->>>>>>> 374ef10b68a65dad1e3c30732dd0b2e9c138a3c9
+      <HintPath>D:/@David/GameDesign/GameDesign/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

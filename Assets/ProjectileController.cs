@@ -32,7 +32,9 @@ public class ProjectileController : MonoBehaviour
         {
             currentDamageDealt = DamageDealt + pStats.currentAttack;
             collision.gameObject.GetComponent<EnemyHPManager>().HurtEnemy(currentDamageDealt);
+            Instantiate(damageBurstEffect, projectilePosition.position, projectilePosition.rotation);
             var clone = (GameObject)Instantiate(floatingNumberPrefab, projectilePosition.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<FloatingNumbers>().damageNumber = currentDamageDealt;
             Destroy(gameObject);
         }
             
