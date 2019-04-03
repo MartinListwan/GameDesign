@@ -18,7 +18,7 @@ public class PlayerStats : MonoBehaviour {
     public int healthShards;
     public int healthPacks;
     public int magicMeter;
-    public bool magicActive;
+    public bool magicActive, makingHealthPack, usingHealthPack;
 
     private PlayerHPManager playerHP;
 

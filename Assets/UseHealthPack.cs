@@ -25,14 +25,15 @@ public class UseHealthPack : MonoBehaviour
     {   GameObject thePlayer = GameObject.Find("Player");
         PlayerController playerControllerScript = thePlayer.GetComponent<PlayerController>();
         PlayerHPManager playerScript = thePlayer.GetComponent<PlayerHPManager>();
-        if (pStats.healthPacks > 0&& playerScript.playerCurrentHP!= playerScript.playerMaxHP)
+        if (pStats.healthPacks > 0&& playerScript.playerCurrentHP!= playerScript.playerMaxHP&&!pStats.usingHealthPack)
         {
             playerControllerScript.canMove = false;
+            pStats.usingHealthPack = true;
             yield return new WaitForSeconds(2);
             pStats.healthPacks -= 1;           
             playerScript.playerCurrentHP+= playerScript.playerMaxHP / 3;
             playerScript.playerCurrentHP = Mathf.Min(playerScript.playerCurrentHP, playerScript.playerMaxHP);
-           
+            pStats.usingHealthPack = false;
 
         }
         playerControllerScript.canMove = true;

@@ -26,15 +26,16 @@ public class MakeHealthPack : MonoBehaviour
         Debug.Log("making healthpacks");
         GameObject thePlayer = GameObject.Find("Player");
             PlayerController playerScript = thePlayer.GetComponent<PlayerController>();
-        if (pStats.healthShards >= 3)
+        if (pStats.healthShards >= 3&&!pStats.makingHealthPack)
         {
-       
-        
+
+            pStats.makingHealthPack = true;
             playerScript.canMove = false;
             yield return new WaitForSeconds(3f);
             pStats.healthShards -= 3;
             pStats.healthPacks += 1;
             playerScript.canMove = true;
+            pStats.makingHealthPack = false;
         }
 
       
