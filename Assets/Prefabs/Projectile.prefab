@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0f1d265570b7c4785292c96db6e54c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageDealt: 250
+  DamageDealt: 5
   speed: 20
   damageBurstEffect: {fileID: 1006745386440188, guid: 686a54cf80732d045a6a1d615f37745c,
     type: 3}
