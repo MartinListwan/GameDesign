@@ -17,6 +17,8 @@ public class PlayerStats : MonoBehaviour {
 
     public int healthShards;
     public int healthPacks;
+    public int magicMeter;
+    public bool magicActive;
 
     private PlayerHPManager playerHP;
 
@@ -30,6 +32,8 @@ public class PlayerStats : MonoBehaviour {
         playerHP = FindObjectOfType<PlayerHPManager>();
         healthShards = 0;
         healthPacks = 0;
+        magicMeter = 0;
+        magicActive = false;
 	}
 	
 	// Update is called once per frame
