@@ -31,8 +31,11 @@ public class ProjectileController : MonoBehaviour
         if (collision.gameObject.tag == "Enemy"||collision.gameObject.tag == "enemy")
         {
             currentDamageDealt = DamageDealt + pStats.currentAttack;
+            if (pStats.magicActive == true) currentDamageDealt = currentDamageDealt * 2;
             collision.gameObject.GetComponent<EnemyHPManager>().HurtEnemy(currentDamageDealt);
+            Instantiate(damageBurstEffect, projectilePosition.position, projectilePosition.rotation);
             var clone = (GameObject)Instantiate(floatingNumberPrefab, projectilePosition.position, Quaternion.Euler(Vector3.zero));
+            clone.GetComponent<FloatingNumbers>().damageNumber = currentDamageDealt;
             Destroy(gameObject);
         }
             

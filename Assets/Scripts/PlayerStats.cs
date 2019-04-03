@@ -15,6 +15,11 @@ public class PlayerStats : MonoBehaviour {
     public int currentAttack;
     public int currentDefence;
 
+    public int healthShards;
+    public int healthPacks;
+    public int magicMeter;
+    public bool magicActive, makingHealthPack, usingHealthPack;
+
     private PlayerHPManager playerHP;
 
 
@@ -25,6 +30,10 @@ public class PlayerStats : MonoBehaviour {
         currentAttack = attackLevels[1];
         currentDefence = defenceLevels[1];
         playerHP = FindObjectOfType<PlayerHPManager>();
+        healthShards = 0;
+        healthPacks = 0;
+        magicMeter = 0;
+        magicActive = false;
 	}
 	
 	// Update is called once per frame
