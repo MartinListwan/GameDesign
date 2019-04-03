@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038d6b19b3abccc45bb5d08d9797507e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 100
+  MoveSpeed: 150
   MaxDist: 15
   MinDist: 5
 --- !u!114 &1880201417213315232
@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a80da7a51ee1fd44b40c3b8b946ee01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 30
-  CurrentHP: 20
+  MaxHP: 80
+  CurrentHP: 80
   ExpValue: 5
   EnemyQuestName: 
 --- !u!58 &4027074203042383629

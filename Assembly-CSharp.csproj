@@ -53,6 +53,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\activeScript.cs" />
+     <Compile Include="Assets\GetHealthShards.cs" />
+     <Compile Include="Assets\HealthPackController.cs" />
+     <Compile Include="Assets\MagicMeterControll.cs" />
+     <Compile Include="Assets\MakeHealthPack.cs" />
      <Compile Include="Assets\Prefabs\Map\V2\Scripts\AnimatedTile.cs" />
      <Compile Include="Assets\Prefabs\Map\V2\Scripts\CameraMover.cs" />
      <Compile Include="Assets\Prefabs\Map\V2\Scripts\CaveTile.cs" />
@@ -104,6 +109,8 @@
      <Compile Include="Assets\Timer\Example\TestTimerBehaviour.cs" />
      <Compile Include="Assets\Timer\Source\Timer.cs" />
      <Compile Include="Assets\Timer\Source\TimerExtensions.cs" />
+     <Compile Include="Assets\UseHealthPack.cs" />
+     <Compile Include="Assets\UseMagic.cs" />
      <None Include="Assets\Art\Open_Sans\LICENSE.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaDefault.shader" />
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />

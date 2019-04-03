@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a80da7a51ee1fd44b40c3b8b946ee01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHP: 50
-  CurrentHP: 30
+  MaxHP: 80
+  CurrentHP: 80
   ExpValue: 5
   EnemyQuestName: enemy1
 --- !u!114 &3916749455691729134

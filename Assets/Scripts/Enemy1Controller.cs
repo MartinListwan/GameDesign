@@ -35,6 +35,11 @@ public class Enemy1Controller : MonoBehaviour
         m_Animator = GetComponent<Animator>();
     }
 
+    void Destroy()
+    {
+        timer.Pause();
+    }
+
     void updatePlayerLocation()
     {
         if (gameObject != null || gameObject.activeInHierarchy)

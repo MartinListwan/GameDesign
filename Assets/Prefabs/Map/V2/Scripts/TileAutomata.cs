@@ -532,29 +532,7 @@ public class TileAutomata : MonoBehaviour {
         }
 
 
-    public void SaveAssetMap()
-    {
-        string saveName = "tmapXY_" + count;
-        var mf = GameObject.Find("Grid");
-
-        if (mf)
-        {
-            var savePath = "Assets/" + saveName + ".prefab";
-            if (PrefabUtility.CreatePrefab(savePath,mf))
-            {
-                EditorUtility.DisplayDialog("Tilemap saved", "Your Tilemap was saved under" + savePath, "Continue");
-            }
-            else
-            {
-                EditorUtility.DisplayDialog("Tilemap NOT saved", "An ERROR occured while trying to saveTilemap under" + savePath, "Continue");
-            }
-
-
-        }
-
-
-    }
-
+   
     // False = should only clear tilemaps and not integer array of filled/not filled
     public void clearMap(bool complete)
     {
