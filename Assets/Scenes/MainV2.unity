@@ -373,7 +373,7 @@ PrefabInstance:
     - target: {fileID: 2392531640518552518, guid: f1462c8b7a944094990b04f9b63e3672,
         type: 3}
       propertyPath: waveWait
-      value: 20
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 2392531640518552518, guid: f1462c8b7a944094990b04f9b63e3672,
         type: 3}
@@ -449,6 +449,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Timer until wave
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069356762732498177, guid: dbd474ad71e00bd4482abd3f1ea38f23,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069356762732498177, guid: dbd474ad71e00bd4482abd3f1ea38f23,
+        type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8069356762732498176, guid: dbd474ad71e00bd4482abd3f1ea38f23,
         type: 3}
@@ -554,16 +564,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8069356762732498177, guid: dbd474ad71e00bd4482abd3f1ea38f23,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 8069356762732498177, guid: dbd474ad71e00bd4482abd3f1ea38f23,
-        type: 3}
-      propertyPath: m_Text
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd474ad71e00bd4482abd3f1ea38f23, type: 3}

@@ -71,6 +71,7 @@ public class TileAutomata : MonoBehaviour {
     public Text waveNumber;
     public Text timeUntilNextWave;
     private Timer timer;
+    public int areaThatEnemiesCanSpawnIn = 10;
 
     void Start()
     {
@@ -99,10 +100,41 @@ public class TileAutomata : MonoBehaviour {
         {
             for (int i = 0; i < hazardCount; i++)
             {
-                Vector3 spawnPosition = new Vector3(spawnTunnelForEnemies.x, spawnTunnelForEnemies.y, 0);
-                Quaternion spawnRotation = Quaternion.identity;
-                int index = Random.Range(0, enemies.Length);
-                Instantiate(enemies[index], spawnPosition, spawnRotation);
+
+                if (player != null)
+                {
+                    while (true)
+                    {
+                        // Spawn enemies around the player
+                        float angle = Random.Range(0.0f, Mathf.PI * 2);
+
+                        // create a vector with length 1.0
+                        Vector3 V = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
+
+                        // scale it to the desired length
+                        V *= Random.Range(2, areaThatEnemiesCanSpawnIn);
+                        Vector2 mapCoord = getPlayerToMapCoordinates(player.transform.position.x, player.transform.position.y);
+                        try
+                        {
+                            Vector3 pos = new Vector3((int)(-(V.x + mapCoord.x) + width / 2), (int)(-(V.y + mapCoord.y) + height / 2), 0);
+                            if (castleTiles[(int)pos.x, (int)(pos.y)] != CastleTiles.CastleTile)
+                            {
+                               
+                                int index = Random.Range(0, enemies.Length);
+                                Quaternion spawnRotation = Quaternion.identity;
+                                Instantiate(enemies[index], pos, spawnRotation);
+                                break;
+                            }
+                        }
+                        catch
+                        {
+
+                        }
+                        
+                    }
+                 
+                }
+
                 yield return new WaitForSeconds(spawnWait);
             }
             currentWaveNumber++;
@@ -124,6 +156,112 @@ public class TileAutomata : MonoBehaviour {
         RightTopToMiddle, RightMiddle,
         BottomRight, BottomRightToMiddleTransition, BottomMiddle, BottomMiddleLeftTransition,
         BottomLeft, LeftMiddle, LeftToTopLeftTransition,
+    }
+
+    public List<Vector2> getShortestPath(float startingXPosWorld, float startingYPosWorld, float endXPosWorld, float endYPosWorld)
+    {
+        Debug.Log("Starting world: " + startingXPosWorld + " : " + startingYPosWorld);
+        Vector2 startPos = getPlayerToMapCoordinates(startingXPosWorld,startingYPosWorld);
+        //Debug.Log(startPos.x + " : " + startPos.y);
+        Vector2 endPos = getPlayerToMapCoordinates(endXPosWorld, endYPosWorld);
+        Debug.Log("player world coordinates: " + endXPosWorld + " : " + endYPosWorld);
+        Queue<Node> queue = new Queue<Node>();
+        List<Vector2> curPath = new List<Vector2>();
+        curPath.Add(new Vector2(startPos.x, startPos.y));
+        Node node = new Node(curPath, startPos.x, startPos.y);
+        queue.Enqueue(node);
+        int rowLength = castleTiles.GetLength(0);
+        int colLength = castleTiles.GetLength(1);
+        HashSet<string> visitedPos = new HashSet<string>();
+        while (queue.Count != 0)
+        {
+            Node curNode = queue.Dequeue();
+            if (Vector2.Distance(new Vector2(curNode.currX, curNode.currY), new Vector2(endPos.x,endPos.y)) <= 1)
+            {
+                // We have a list on how to get to the destionation
+                List<Vector2> distancePath = new List<Vector2>();
+                foreach (Vector2 vector in curNode.previousPositions)
+                {
+                    Vector2 direction = getMapToPlayerCoordinates(vector.x, vector.y);
+                    distancePath.Add(direction);
+                }
+                
+                Debug.Log("Starting location for distance: " + endXPosWorld + " : " + endYPosWorld);
+                return distancePath;
+            }
+            if (curNode.currX < 0 || curNode.currY < 0 || curNode.currX >= rowLength || curNode.currY >= colLength)
+            {
+                continue;
+            }
+
+            string curPos = curNode.currX + " : " + curNode.currY;
+            if (visitedPos.Contains(curPos))
+            {
+                continue;
+            }
+            visitedPos.Add(curPos);
+            try
+            {
+
+            } catch{
+                if (castleTiles[(int)Mathf.Round(curNode.currX), (int)Mathf.Round(curNode.currY)] == CastleTiles.CastleTile) // hit a wall
+                {
+                    continue;
+                }
+            }
+            if (castleTiles[(int) Mathf.Round(curNode.currX), (int) Mathf.Round(curNode.currY)] == CastleTiles.CastleTile) // hit a wall
+            {
+                continue;
+            }
+            if (castleTiles[(int)(curNode.currX), (int)(curNode.currY)] == CastleTiles.CastleTile) // hit a wall
+            {
+                continue;
+            }
+            List<Vector2> newList = new List<Vector2>(curNode.previousPositions);
+            newList.Add(new Vector2(curNode.currX, curNode.currY + 1));
+            Node upNode = new Node(newList, curNode.currX, curNode.currY + 1);
+            queue.Enqueue(upNode);
+
+            List<Vector2> leftList = new List<Vector2>(curNode.previousPositions);
+            leftList.Add(new Vector2(curNode.currX - 1, curNode.currY));
+            Node leftNode = new Node(leftList, curNode.currX - 1, curNode.currY);
+            queue.Enqueue(leftNode);
+
+            List<Vector2> downList = new List<Vector2>(curNode.previousPositions);
+            downList.Add(new Vector2(curNode.currX, curNode.currY - 1));
+            Node downNode = new Node(downList, curNode.currX, curNode.currY - 1);
+            queue.Enqueue(downNode);
+
+            List<Vector2> rightList = new List<Vector2>(curNode.previousPositions);
+            rightList.Add(new Vector2(curNode.currX + 1, curNode.currY));
+            Node rightNode = new Node(rightList, curNode.currX + 1, curNode.currY);
+            queue.Enqueue(rightNode);
+        }
+        
+        return new List<Vector2>();
+    }
+
+    public class Node
+    {
+        public List<Vector2> previousPositions;
+        public float currX;
+        public float currY;
+        public Node(List<Vector2> previousPositions, float x, float y)
+        {
+            this.previousPositions = previousPositions;
+            this.currX = x;
+            this.currY = y;
+        }
+    }
+
+    public Vector2 getPlayerToMapCoordinates(float x, float y)
+    {
+        return new Vector2(-x + width/2 , -y + height / 2);
+    }
+
+    public Vector2 getMapToPlayerCoordinates(float x, float y)
+    {
+        return new Vector2(-x + width / 2, -y + height / 2);
     }
 
     // Do simulation, takes in number of reptitions
@@ -219,6 +357,7 @@ public class TileAutomata : MonoBehaviour {
         var playerObject = Instantiate(player, playerPos, Quaternion.identity);
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>().followTarget = playerObject;
         playerObject.name = "Player";
+        this.player = playerObject;
 
     }
 
@@ -226,7 +365,7 @@ public class TileAutomata : MonoBehaviour {
     {
         int rowLength = castleTiles.GetLength(0);
         int colLength = castleTiles.GetLength(1);
-        if (x < 0 || y < 0 || x >= rowLength || y > colLength)
+        if (x < 0 || y < 0 || x >= rowLength || y >= colLength)
         {
             return 0;
         }
